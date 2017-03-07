@@ -1,0 +1,58 @@
+/* Setting box-sizing to ensure explicit width settings are guaranteed */
+* {
+	box-sizing: border-box;
+}
+
+/* Ruleset for the row class */
+.row {
+	max-width: 1000px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 auto;
+}
+
+/*Clearfix */
+.row::before,
+.row::after {
+	display: table;
+	content: '';
+}
+
+.row::after {
+	clear: both;
+}
+
+/* Ruleset for the columns to float to the left of parent container. */
+/* 2.08% gutter is split on the left & right */
+.col-3, .col-4, .col-6, .col-12 {
+	float: left;
+	padding-left: 1.04166666%;
+  	padding-right: 1.04166666%;
+}
+
+/*Mobile Defaults */
+.col-3, .col-4, .col-6, .col-12 {
+	width: 100%;
+}
+
+/*Non-mobile, grid */
+/* This will override the default styling for screens that are 640px & wider */
+@media only screen and (min-width: 640px) {
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33333%
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-12 {
+	width: 100%;
+}
+}
+
+
